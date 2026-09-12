@@ -1,0 +1,46 @@
+id: Q-CH01-001
+type: main
+chapter: CH-01
+status: draft
+content_version: 0.1
+title: Lời hứa dưới vực
+giver: NPC-THUY_TOC_SURVIVOR
+player_goal: Tìm và mở đường vào đền chìm để xác định nguồn yêu khí.
+fictional_reason: Thủy tộc cần biết Long Nhân có phải kẻ mang tai họa mới hay là cơ hội cuối cùng.
+steps:
+  - id: step_01
+    objective: Theo dấu ánh sáng xanh qua rạn san hô héo.
+    completion_signal: Một mảnh bia đá phát sáng.
+  - id: step_02
+    objective: Đối chiếu ba ký hiệu trên bia với lời kể của Thủy tộc.
+    completion_signal: Mở cửa đền chìm.
+  - id: step_03
+    objective: Quyết định cứu người canh đền hay đuổi theo Ngư Tinh.
+    completion_signal: Cờ choice được ghi.
+choice_points:
+  - choice_id: C-CH01-001
+    prompt_to_player: Cứu người canh đền hay giữ khoảng cách để truy đuổi boss?
+    effects:
+      rescue:
+        tribal_trust: 1
+        mercy_marks: 1
+      pursue:
+        dragon_hunger: 1
+rewards:
+  narrative:
+    - Mở một phần bond của LG-01.
+  system_hook:
+    - Mở đường vào arena Ngư Tinh.
+  item: []
+fail_or_cost: Bỏ mặc người canh đền khiến hậu cảnh arena thiếu tín hiệu cảnh báo xoáy nước.
+state_changes:
+  flags:
+    - QUEST_CH01_001_COMPLETE
+completion_signal: NPC sống sót hoặc đèn đền tắt, tùy lựa chọn.
+dependencies:
+  - type: narrative
+    id: CH-01-S03
+    status: TBD
+  - type: gameplay
+    id: GP-WATER-RIFT-TRAVERSAL
+    status: TBD

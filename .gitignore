@@ -1,0 +1,23 @@
+# Blender portable build (~1.3 GB) - tải lại từ blender.org khi cần
+.tools/
+
+# Thư viện MakeHuman/MPFB (~1.3 GB) - tải lại bằng lệnh trong
+# assets/libraries/makehuman-mpfb/README.md
+assets/libraries/*.zip
+assets/libraries/**/*.zip
+assets/libraries/**/*.download
+assets/libraries/**/*.bin
+
+# Blender lưu bản sao lưu mỗi lần ghi đè
+*.blend1
+*.blend2
+
+__pycache__/
+*.pyc
+
+# Modly generated dependencies and build output
+assets/libraries/modly/node_modules/
+assets/libraries/modly/api/.venv/
+assets/libraries/modly/resources/python-embed/
+assets/libraries/modly/out/
+assets/libraries/modly/dist/

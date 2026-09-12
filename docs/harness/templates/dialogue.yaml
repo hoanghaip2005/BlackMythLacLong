@@ -1,0 +1,21 @@
+id: D-CH01-S04-01
+type: dialogue
+status: draft
+content_version: 0.1
+speaker: NPC-THUY_TOC_SURVIVOR
+listener: PLAYER
+context: Trước cửa đền chìm, sau khi Long Nhân cứu hoặc bỏ mặc người canh đền.
+intent: Buộc Long Nhân nhìn thấy món nợ của thủy tộc thay vì chỉ nhìn thấy Long Ngọc.
+subtext: Người sống sót vừa cần Long Nhân vừa sợ Long Nhân lặp lại sự bỏ rơi của thủy tổ.
+lines:
+  - line_id: D-CH01-S04-01-A
+    condition: choice_rescue
+    text: Ngươi cứu một người. Đừng vội gọi đó là cứu cả biển.
+    voice_direction: Kiềm chế, biết ơn nhưng không phục tùng.
+  - line_id: D-CH01-S04-01-B
+    condition: choice_pursue
+    text: Ngươi chạy theo ánh ngọc. Biển đã từng bị bỏ lại vì những ánh sáng như thế.
+    voice_direction: Lạnh, đau, không la hét.
+choice_response: []
+localization_notes:
+  - Giữ hình ảnh ánh sáng như tham vọng, không dịch thành thuật ngữ tôn giáo.

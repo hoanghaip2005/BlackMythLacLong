@@ -1,0 +1,42 @@
+id: B-01
+type: boss
+chapter: CH-01
+status: draft
+content_version: 0.1
+name: Ngư Tinh
+myth_inspiration: Truyền thuyết Lạc Long Quân và thủy quái biển Đông.
+long_ngoc: LG-01
+surface_role: Kẻ giữ Long Ngọc và nguyên nhân trực tiếp khiến vực biển dâng.
+inner_wound: Bị Lạc Long Quân chém đứt đuôi, rồi bị bỏ lại cùng lời hứa bảo hộ không ai thực hiện.
+desire: Muốn nuốt Long Ngọc để không bao giờ phải phụ thuộc vào lời hứa của loài người.
+arena_story: Bờ đền chìm liên tục bị nước xóa, cho thấy ký ức của Thủy tộc đang mất đi.
+phases:
+  - phase: 1
+    narrative_trigger: Ngư Tinh nhận ra huyết mạch rồng trong Long Nhân.
+    combat_hook: Xoáy nước nhỏ thay đổi vị trí an toàn.
+    telegraph: Mặt nước lõm xuống trước khi hút.
+    player_counterplay: Dùng Thủy Ảnh hoặc di chuyển theo dòng ngắt.
+  - phase: 2
+    narrative_trigger: Long Nhân chạm vào ký hiệu lời hứa trên đền.
+    combat_hook: Đuôi lửa quét qua bờ và làm sập bệ đá.
+    telegraph: Đuôi phát sáng trước nhịp quét.
+    player_counterplay: Thế Ngự, né hoàn hảo hoặc cắt neo nước.
+bond_resolution:
+  required_truth: TRUTH_SEAL_WAS_NEVER_BROKEN
+  peaceful_condition: Giải cứu người canh đền và đọc đủ ký hiệu trước khi đánh.
+boss_fates:
+  - defeated_by_force
+  - released
+  - absorbed
+memory_reveal: Phong ấn không bị phá; lời hứa bảo hộ đã bị bỏ mặc.
+aftermath_variants:
+  released: Thủy tộc mở đường và trao LG-01 như một lời gửi gắm.
+  defeated_by_force: LG-01 tắt một phần; Long Nhân nhận sức mạnh nhưng mất một ký ức.
+  absorbed: Long Khí bùng lên; dragon_hunger tăng và nước quanh tế đàn hóa đen.
+dependencies:
+  - type: gameplay
+    id: GP-BOSS-NGU-TINH
+    status: TBD
+  - type: art
+    id: ART-BOSS-NGU-TINH
+    status: TBD

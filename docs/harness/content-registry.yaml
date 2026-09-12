@@ -1,0 +1,88 @@
+schema_version: 0.1
+project: HUYET_MACH_LAC_LONG
+status: narrative_preproduction
+chapters:
+  - id: CH-01
+    title: Trầm Thủy Ngư Tinh
+    location: Vực Biển Đông
+    boss: B-01
+    long_ngoc: LG-01
+    package_path: docs/harness/chapter-01
+  - id: CH-02
+    title: Ảo Ảnh Đầm Cáo
+    location: Tây Hồ - Đầm Xác Cáo
+    boss: B-02
+    long_ngoc: LG-02
+  - id: CH-03
+    title: Huyết Mộc Đoạt Mệnh
+    location: Rừng Rậm Phong Châu
+    boss: B-03
+    long_ngoc: LG-03
+  - id: CH-04
+    title: Lệ Đá Đỉnh Sương
+    location: Núi Thạch Môn
+    boss: B-04
+    long_ngoc: LG-04
+  - id: CH-05
+    title: Song Giao Tế Thủy
+    location: Ngã Ba Hạc
+    boss: B-05
+    long_ngoc: LG-05
+  - id: CH-06
+    title: Hỗn Mang Tế Đàn
+    location: Đỉnh Nghĩa Lĩnh
+    boss: B-06
+    long_ngoc: null
+bosses:
+  - id: B-01
+    name: Ngư Tinh
+    chapter: CH-01
+  - id: B-02
+    name: Hồ Tinh - Cửu Vĩ
+    chapter: CH-02
+  - id: B-03
+    name: Mộc Tinh
+    chapter: CH-03
+  - id: B-04
+    name: Đại Bàng Tinh
+    chapter: CH-04
+  - id: B-05
+    name: Song Giao - Hắc Giao Long
+    chapter: CH-05
+  - id: B-06
+    name: Hỗn Mang
+    chapter: CH-06
+long_ngoc:
+  - id: LG-01
+    chapter: CH-01
+    truth_flag: TRUTH_SEAL_WAS_NEVER_BROKEN
+  - id: LG-02
+    chapter: CH-02
+    truth_flag: TRUTH_FOX_WAS_A_REFUGE
+  - id: LG-03
+    chapter: CH-03
+    truth_flag: TRUTH_OLD_ARMY_WAS_BOUND
+  - id: LG-04
+    chapter: CH-04
+    truth_flag: TRUTH_EXILE_WAS_ERASED
+  - id: LG-05
+    chapter: CH-05
+    truth_flag: TRUTH_CONFLICT_WAS_FED
+endings:
+  - id: E-01
+    key: LONG_VUONG
+  - id: E-02
+    key: TAN_HON_MANG
+  - id: E-03
+    key: DOAN_TUYET_LONG_MACH
+  - id: E-04
+    key: HOA_GIAI_BACH_TOC
+variables:
+  - memory_recovered
+  - mercy_marks
+  - tribal_trust
+  - dragon_hunger
+  - relics_purified
+  - truth_flags
+  - boss_fates
+  - final_decision

@@ -1,0 +1,89 @@
+schema_version: 0.1
+content_type: visual_character
+status: draft
+content_version: 0.1
+
+identity:
+  id: CHARACTER-ID
+  name: Character name
+  role: player|npc|boss|enemy
+  chapter: CH-##
+  visual_thesis: One sentence describing the image the player must remember.
+  player_read: What the player must understand from the silhouette before close inspection.
+
+silhouette:
+  primary_shape: Shape language and dominant mass.
+  height_ratio: Relative scale to PLAYER-LONG-NHAN or human baseline.
+  stance: Default posture, center of gravity, and combat read.
+  recognition_features:
+    - Feature visible at gameplay distance.
+  forbidden_confusions:
+    - Character or faction this must not resemble.
+
+anatomy:
+  body_type: Proportion, mass, age read, and species.
+  face: Face shape, planes, expression baseline.
+  hair: Cut, texture, movement, and color.
+  eyes: Shape, iris, glow, and emotional read.
+  skin_or_scales: Base surface and visible variation.
+  hands_and_feet: Construction, protection, and orientation constraints.
+
+outfit:
+  layers:
+    - id: LAYER-01
+      name: Layer name
+      purpose: Narrative or functional purpose.
+      construction: Cut, fabric, closure, and wear.
+      color: '#000000'
+      material: Material response.
+      attachment: Body socket or attachment rule.
+  weapon:
+    id: WEAPON-ID
+    name: Weapon name
+    silhouette: Readable weapon profile.
+    construction: Local material and construction logic.
+    carry_and_grip: Sheath, grip, hand, and back attachment.
+  accessories:
+    - id: ACCESSORY-ID
+      purpose: Story or gameplay readability.
+      construction: Shape, material, and placement.
+
+art_direction:
+  palette:
+    primary: '#000000'
+    secondary: '#000000'
+    accent: '#000000'
+    danger_or_corruption: '#000000'
+  materials: Surface response, roughness intent, and wetness/dirt rules.
+  vietnamese_motifs_allowed:
+    - Motif and source logic.
+  motifs_forbidden:
+    - Chinese imperial/cloud/dragon motifs.
+  wear_and_corruption: How damage and yêu khí alter the design without replacing identity.
+
+production:
+  source_assets:
+    - name: Asset name
+      source: URL or local package reference.
+      license: License and attribution requirement.
+      modifications: Permitted modifications and exclusions.
+  blend_file: Absolute or repository-relative .blend path.
+  preview_file: Absolute or repository-relative preview path.
+  asset_ids:
+    - ART-CH##-###
+  rig_notes: Bone, socket, scale, and pose constraints.
+  animation_notes: Motion and silhouette constraints; no frame data here.
+  dependencies:
+    - owner: art|animation|vfx|gameplay|narrative
+      item: Dependency description.
+
+review:
+  cultural_review: pending|passed|needs_revision
+  reviewer: Name or role.
+  acceptance_checklist:
+    - Silhouette readable at gameplay distance.
+    - Outfit and weapon attachment are physically coherent.
+    - Vietnamese references are documented and not mixed with forbidden motifs.
+    - Source asset license and modifications are recorded.
+    - Preview and .blend paths resolve.
+    - Design remains valid for placeholder or final production asset.

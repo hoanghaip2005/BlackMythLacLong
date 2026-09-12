@@ -1,0 +1,100 @@
+schema_version: 0.2
+chapter:
+  id: CH-01
+  title: Trầm Thủy Ngư Tinh
+  status: draft
+  package_path: docs/harness/chapter-01
+  long_ngoc: LG-01
+  boss: B-01
+  truth_flag: TRUTH_SEAL_WAS_NEVER_BROKEN
+  visual_design: 08-visual-design.md
+  combat_phases: 2
+  boss_intro: B01-P0
+  boss_phase_ids:
+    - B01-P1-HYBRID
+    - B01-P2-ABYSSAL
+scene_sequence:
+  - id: CH-01-S01
+    title: Trứng đá mở mắt
+    required: true
+  - id: CH-01-S02
+    title: Rạn san hô héo
+    required: true
+  - id: CH-01-S03
+    title: Người giữ đèn
+    required: true
+  - id: CH-01-S04
+    title: Đền chìm và ba ký hiệu
+    required: true
+  - id: CH-01-S05
+    title: Lời hứa bị bỏ lại
+    required: true
+  - id: CH-01-S06
+    title: Xoáy vực
+    required: true
+  - id: CH-01-B01
+    title: Ngư Tinh
+    required: true
+  - id: CH-01-S07
+    title: Nguyên thần và Rìu Thần Thạch Sơn
+    required: true
+  - id: CH-01-S08
+    title: Bờ nước chết
+    required: true
+quests:
+  - id: Q-CH01-001
+    title: Lời hứa dưới vực
+    type: main
+    required: true
+  - id: Q-CH01-002
+    title: Ba hồi chuông
+    type: optional
+    required: false
+  - id: Q-CH01-003
+    title: Người bị bỏ lại
+    type: bond
+    required: false
+  - id: Q-CH01-004
+    title: Dấu móng trên đá
+    type: exploration
+    required: false
+choices:
+  - id: C-CH01-001
+    scene: CH-01-S03
+    title: Linh và dòng kéo
+  - id: C-CH01-002
+    scene: CH-01-S05
+    title: Cách gọi Ngư Tinh
+  - id: C-CH01-003
+    scene: CH-01-S07
+    title: Cách nhận nguyên thần
+boss_fates:
+  - released
+  - defeated_by_force
+  - absorbed
+characters:
+  - id: PLAYER-LONG-NHAN
+    role: player
+    visual_card: 08-visual-design.md#character-card-long-nhan
+    blend_file: assets/characters/long_nhan/long_nhan_v3.blend
+    preview_file: assets/characters/long_nhan/long_nhan_v3_hero.png
+  - id: B-01
+    role: boss
+    visual_card: 08-visual-design.md#character-card-b-01-ngu-tinh
+    blend_file: assets/bosses/chapter_01_ngutinh/ngu_tinh_ch01.blend
+    preview_file: assets/bosses/chapter_01_ngutinh/ngu_tinh_ch01_preview.png
+handoff_docs:
+  narrative:
+    - 00-chapter-brief.md
+    - 01-scene-flow.md
+    - 02-cast-and-factions.md
+    - 03-quests-and-choices.md
+    - 04-dialogue-script.md
+  encounter:
+    - 05-boss-encounter.md
+  production:
+    - 06-state-and-handoff.md
+  visual:
+    - 08-visual-design.md
+  validation:
+    - 07-validation.md

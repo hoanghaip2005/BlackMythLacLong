@@ -1,0 +1,38 @@
+id: CH-01-S01
+type: scene
+chapter: CH-01
+status: draft
+content_version: 0.1
+title: Trứng đá mở mắt
+purpose: Thiết lập sự cô độc, bản năng sinh tồn và câu hỏi về thân phận Long Nhân.
+dramatic_question: Long Nhân sẽ làm gì khi thức tỉnh mà không có ký ức?
+entry_state:
+  location: seabed_stone_egg
+  player_knowledge: []
+exit_state:
+  location: dead_coral_rift
+  player_knowledge:
+    - Long Nhân có huyết mạch rồng nhưng không biết nguồn gốc.
+beats:
+  - id: beat_01
+    action: Vỏ đá nứt dưới áp lực của biển sâu.
+    player_experience: sound_and_movement
+  - id: beat_02
+    action: Người chơi bơi theo một quầng sáng yếu.
+    player_experience: guided_exploration
+  - id: beat_03
+    action: Thanh đoản kiếm rỉ sét nằm cạnh một bàn thờ vỡ.
+    player_experience: first_weapon_hook
+branch_hooks: []
+state_changes: []
+dependencies:
+  - type: art
+    id: ART-SEA-PLACEHOLDER
+    status: TBD
+  - type: audio
+    id: AUD-CH01-LOW_DRONE
+    status: TBD
+validation:
+  - canon_long_nhan_not_lac_long_quan
+  - no_long_ngoc_granted
+review_notes: []
