@@ -13,6 +13,7 @@ variables:
   tribal_trust: 0
   dragon_hunger: 0
   relics_purified: 0
+  hidden_released: 0
 flags:
   - CH01_STARTED
   - LONG_NHAN_UNNAMED
@@ -40,6 +41,8 @@ final_decision: null
 | `CH01_ANCHOR_3_ACTIVE` | B01 | Third promise anchor activated |
 | `Q_CH01_002_COMPLETE` | Optional | Three bells restored |
 | `Q_CH01_003_COMPLETE` | S07 | Bond requirement completed |
+| `Q_CH01_00H_COMPLETE` | Hidden | Oan Khuất Ẩn `CH-01-HIDDEN` completed |
+| `CH01_HIDDEN_RELEASED` | Hidden | `HB-01` Ma Da released (cộng `hidden_released`) |
 | `CH01_END_RELEASED` | S07 | Ngư Tinh released |
 | `CH01_END_FORCE` | S07 | Ngư Tinh defeated by force |
 | `CH01_END_ABSORBED` | S07 | Ngư Tinh essence absorbed |
@@ -60,6 +63,7 @@ final_decision: null
 | Release boss | `memory_recovered +1`, `mercy_marks +1`, `relics_purified +1` | `CH01_END_RELEASED` | Warm light, clear water |
 | Leave essence untouched | none | `CH01_END_FORCE` | Broken memory, cold light |
 | Absorb essence | `dragon_hunger +1` | `CH01_END_ABSORBED` | Black current under skin |
+| Release hidden grievance `HB-01` | `hidden_released +1`, `mercy_marks +1` | `CH01_HIDDEN_RELEASED` | Bell "no-return" tolls; wreck-field goes quiet |
 | Chapter exit | none | `CH01_COMPLETE`, `LG01_ACQUIRED` | CH-02 hook becomes available |
 
 ## State invariants
@@ -71,6 +75,7 @@ final_decision: null
 - `relics_purified` increases only on release, never on force or absorption.
 - Rìu Thần Thạch Sơn is unavailable before `CH01_COMPLETE`.
 - `dragon_hunger` cannot decrease during CH-01.
+- `hidden_released` increases at most once in CH-01 (only on `HB-01` release); the hidden encounter is optional and never required for `CH01_COMPLETE`.
 - `TRUTH_SEAL_WAS_NEVER_BROKEN` is a clue/flag after CH-01, not a complete global proof until CH-06.
 
 ## Handoff: gameplay

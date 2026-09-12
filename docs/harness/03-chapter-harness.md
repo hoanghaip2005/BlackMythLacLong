@@ -20,6 +20,7 @@
 - Narrative gate: người chơi chọn cưỡng đoạt nguyên thần hoặc trả lại lời hứa bảo hộ cho Thủy tộc.
 - Reveal: câu chuyện “phong ấn bị phá” chỉ là một ký hiệu bị đọc sai.
 - Aftermath: thanh đoản kiếm rỉ sét tan vỡ; Rìu Thần Thạch Sơn thức tỉnh.
+- Boss ẩn (`HB-01`, ADR-004): **Ma Da — Vong Đáy Vực** ở màn ẩn `CH-01-HIDDEN` (bãi xác thuyền dưới vực). Giải thoát mở `hidden_truth`: lời hứa bảo hộ từng *thất bại* trước cả khi đền chìm; cộng `hidden_released`.
 
 ### Beat chính
 
@@ -38,6 +39,7 @@ Chi tiết triển khai narrative của chương nằm tại `docs/harness/chapt
 - Narrative gate: cứu tên thật của người bị biến thành bóng hoặc truy đuổi hình cáo mạnh nhất.
 - Reveal: Hồ Tinh từng biến đầm thành nơi trú ẩn cho người chạy loạn; chính sự sợ hãi của họ đã tạo lớp mặt nạ.
 - Aftermath: một NPC có thể đi cùng hoặc chỉ xuất hiện qua tiếng hát, tùy `tribal_trust`.
+- Boss ẩn (`HB-02`, ADR-004): **Bóng Vô Danh** ở màn ẩn `CH-02-HIDDEN` (hang gương dưới đầm). Giải thoát mở `hidden_truth`: Hồ Tinh từng *giữ tên* cho người chạy loạn; cộng `hidden_released`.
 
 ### Beat chính
 
@@ -53,7 +55,8 @@ Chi tiết triển khai narrative của chương nằm tại `docs/harness/chapt
 - Gameplay hook: đấu trường rễ chuyển động; phá rễ để mở đường và lộ lõi.
 - Narrative gate: giải thoát vong linh hoặc giữ họ chiến đấu để mở đường nhanh hơn.
 - Reveal: nhiều chiến binh không bị ép hoàn toàn; họ bám vào lời thề vì sợ lịch sử quên mình.
-- Aftermath: `truth_old_army_was_bound`; mở ký ức về chiến tranh giành lãnh thổ.
+- Aftermath: `TRUTH_OLD_ARMY_WAS_BOUND`; mở ký ức về chiến tranh giành lãnh thổ.
+- Boss ẩn (`HB-03`, ADR-004): **Tướng Quân Vô Đầu** ở màn ẩn `CH-03-HIDDEN` (gò mộ dưới rễ). Giải thoát mở `hidden_truth`: một phần vong binh *tự nguyện* ở lại vì sợ bị lịch sử quên; cộng `hidden_released`.
 
 ### Beat chính
 
@@ -70,6 +73,7 @@ Chi tiết triển khai narrative của chương nằm tại `docs/harness/chapt
 - Narrative gate: lấy mảnh ngọc bằng cách săn boss hoặc nghe lời kể của bộ tộc bị ruồng bỏ.
 - Reveal: Đại Bàng Tinh là vật chứa cho phẫn nộ của những người bị xóa khỏi lịch sử triều đại.
 - Aftermath: Long Nhân biết Lạc Long Quân từng rời đi khi con người bắt đầu dùng huyết thống làm lý do cai trị.
+- Boss ẩn (`HB-04`, ADR-004): **Tù Trưởng Lệ Đá** ở màn ẩn `CH-04-HIDDEN` (khe đá dựng, rừng bia không tên). Giải thoát mở `hidden_truth`: tên bộ tộc bị xóa *có chủ đích* bởi triều đại "thống nhất"; cộng `hidden_released`.
 
 ### Beat chính
 
@@ -86,6 +90,7 @@ Chi tiết triển khai narrative của chương nằm tại `docs/harness/chapt
 - Narrative gate: kích hai giao đánh nhau để lấy lợi thế, hoặc phá nguồn nước nuôi xung đột.
 - Reveal: Hỗn Mang đã làm méo ký ức của cả hai giao để chúng tin rằng mảnh ngọc thuộc về mình.
 - Aftermath: năm mảnh đủ để mở đường lên Nghĩa Lĩnh; tất cả truth flag có thể hoàn thành.
+- Boss ẩn (`HB-05`, ADR-004): **Giao Mẫu** ở màn ẩn `CH-05-HIDDEN` (miếu chìm ở ngã ba nước). Giải thoát mở `hidden_truth`: có *nạn nhân thứ ba* của cuộc tranh chấp mà cả hai giao đã quên; cộng `hidden_released`.
 
 ### Beat chính
 
@@ -102,6 +107,7 @@ Chi tiết triển khai narrative của chương nằm tại `docs/harness/chapt
 - Narrative gate: bốn quyết định cuối `restore`, `absorb`, `destroy`, `reconcile`.
 - Reveal: phong ấn chưa từng vỡ; câu chuyện phong ấn là lớp ngụy trang giúp Hỗn Mang biến nợ lịch sử thành một kẻ thù duy nhất.
 - Aftermath: một trong bốn ending theo Resolution Rules.
+- Boss ẩn: không có `HB-06`. Full completion (`hidden_released = 5`, ADR-004) mở **lớp hòa giải trọn vẹn** của `E-04`; thiếu nó thì `reconcile` chỉ đạt `E-04-PARTIAL` (xem `02` §7).
 
 ### Beat chính
 

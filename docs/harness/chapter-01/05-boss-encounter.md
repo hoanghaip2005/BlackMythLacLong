@@ -182,3 +182,54 @@ Hậu quả:
 - Có đường release không yêu cầu perfect combat.
 - Cưỡng đoạt tạo lợi ích cảm nhận ngay, đồng thời gieo cost narrative rõ.
 - Boss không bị gọi là đã “chết” trước khi fate được ghi.
+
+---
+
+# Oan Khuất Ẩn — `HB-01` Ma Da (Vong Đáy Vực)
+
+> Encounter tùy chọn (ADR-004) trong màn ẩn `CH-01-HIDDEN`. Không chặn tiến độ chính. Mở `hidden_released` cho kết thúc thật `E-04`.
+
+## Encounter identity
+
+- ID: `HB-01`
+- Name: Ma Da — Vong Đáy Vực
+- Arena: bãi xác thuyền xếp lớp dưới vực; nước tối, tầm nhìn hẹp, nhiều xác thuyền làm bệ/mê cung.
+- Player objective: hiểu rằng những vong này **kéo người sống xuống vì muốn được nhớ tên**, không phải vì đói; chọn *giải thoát* (đánh hồi chuông “không-về” + gọi tên) hay *dẹp/cưỡng đoạt*.
+- Emotional promise: người chơi nhận ra “phong ấn vỡ” là lời giải thích sai — nỗi đau của biển bắt đầu từ **sự bỏ mặc**, trước cả khi đền sụp.
+
+## Hidden boss desire
+
+Ma Da không có một ý chí duy nhất; nó là **khối oan tập thể** của những người đi biển chết mà lời hứa bảo hộ đến trễ. Nó “giữ” người sống lại vì sợ bị quên. Nó không phải ác; nó là bằng chứng sống của một lời hứa thất bại.
+
+## Phases (mô tả bằng nhịp kể, không con số — 06 §9)
+
+- **`HB01-P1` Kéo Xuống:** các bóng ma kéo Long Nhân về phía xác thuyền; người chơi phải giữ độ cao/độ nổi (dùng `Thủy Ảnh` để thoát đợt kéo). Trải nghiệm: ngột ngạt, bị níu.
+- **`HB01-P2` Gọi Tên:** khi người chơi kích hoạt được hồi chuông “không-về” (hoặc đọc một tên trên xác thuyền), khối vong **dừng một nhịp** và hiện hình một vong cụ thể — khoảnh khắc đối diện. Đây là cửa sổ `released`.
+
+## Telegraph & counterplay (hook, không frame data)
+
+- Nước tối sẫm lại và dòng kéo đổi hướng trước mỗi đợt `ma da` trồi lên.
+- Hồi chuông “không-về” vang lên là tín hiệu cửa sổ giải thoát.
+- Counterplay: `Thủy Ảnh` để thoát kéo; `Thế Ngự` để đứng vững giữa dòng; tương tác chuông/bia tên thay vì chỉ đánh.
+
+## Fate resolution
+
+### `released`
+- Điều kiện: đánh hồi chuông “không-về” **và** gọi/ghi tên ít nhất một vong (hành động, không phải nhãn “tha thứ”).
+- Hậu quả: `boss_fates[HB-01] = released`, `hidden_released +1`, `mercy_marks +1`, `CH01_HIDDEN_RELEASED`. Bãi xác lặng; mở `hidden_truth` đào sâu `TRUTH_SEAL_WAS_NEVER_BROKEN`: *lời hứa bảo hộ từng thất bại trước cả khi đền chìm.*
+
+### `defeated_by_force`
+- Đánh tan khối vong mà không gọi tên. Hậu quả: `boss_fates[HB-01] = defeated_by_force`; không tăng `hidden_released`; biển lặng nhưng “nặng”; một dòng thoại hậu quả ghi nhận cái giá.
+
+### `absorbed`
+- Cưỡng đoạt khối oan. Hậu quả: `boss_fates[HB-01] = absorbed`, `dragon_hunger +1`; không tăng `hidden_released`; vệt đen dưới da đậm hơn (nhất quán với imagery absorb của CH-01).
+
+## Hidden boss lines (direction)
+
+- Khi kéo: “Ở lại… nhớ tên chúng ta…”
+- Khi được gọi tên (released): “Vậy là vẫn còn một người gọi. Thế là đủ để đi.”
+- Khi bị cưỡng đoạt: im lặng — chỉ có tiếng nước đóng lại.
+
+## Cultural review note (01 §11)
+
+`Ma da` là tín ngưỡng dân gian về người chết đuối; dùng ở đây có **chức năng chủ đề rõ** (cái giá của lời hứa bảo hộ bị bỏ mặc), không phải trang trí rùng rợn. Tránh mô tả như “quỷ kéo chân” mua vui; giữ tông bi thương, trang trọng. Cần cultural review trước khi `approved`.

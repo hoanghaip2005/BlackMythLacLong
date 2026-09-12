@@ -29,6 +29,7 @@ Khi hai tài liệu mâu thuẫn, áp dụng thứ tự sau:
 - Sáu chương và năm mảnh Long Ngọc.
 - Nhánh lựa chọn, biến số, cờ trạng thái.
 - Bốn kết thúc chính và fallback.
+- Lớp "Oan Khuất Ẩn" (boss ẩn mỗi chương, ADR-004) và điều kiện full completion cho kết thúc thật `E-04`.
 - Template nội dung có ID.
 - Prompt AI có context budget và self-check.
 - Visual harness cho silhouette, anatomy, outfit, vũ khí, asset provenance và cultural review.
@@ -66,6 +67,12 @@ Khi hai tài liệu mâu thuẫn, áp dụng thứ tự sau:
 
 ## Package đang phát triển
 
-- `chapter-01/README.md` - package chi tiết của CH-01.
-- `chapter-01/08-visual-design.md` - visual contract cho Long Nhân và Ngư Tinh.
-- `templates/visual-character.yaml` - template visual character dùng cho các chương sau.
+Mỗi chương có một package chi tiết 11 file theo khuôn `chapter-01/` (README, 00-brief, 01-scene-flow, 02-cast, 03-quests, 04-dialogue, 05-boss-encounter, 06-state-and-handoff, 07-validation, 08-visual-design, registry.yaml), gồm cả boss chính (`B-0X`) và boss ẩn Oan Khuất Ẩn (`HB-0X`, ADR-004).
+
+- `chapter-01/` — CH-01 Trầm Thủy Ngư Tinh (boss ẩn `HB-01` Ma Da).
+- `chapter-02/` — CH-02 Ảo Ảnh Đầm Cáo (boss ẩn `HB-02` Bóng Vô Danh).
+- `chapter-03/` — CH-03 Huyết Mộc Đoạt Mệnh (boss ẩn `HB-03` Tướng Quân Vô Đầu).
+- `chapter-04/` — CH-04 Lệ Đá Đỉnh Sương (boss ẩn `HB-04` Tù Trưởng Lệ Đá).
+- `chapter-05/` — CH-05 Song Giao Tế Thủy (boss ẩn `HB-05` Giao Mẫu).
+- `chapter-06/` — CH-06 Hỗn Mang Tế Đàn (không boss ẩn; full completion mở lớp hòa giải trọn vẹn của `E-04`).
+- `templates/visual-character.yaml` — template visual character dùng cho các chương.

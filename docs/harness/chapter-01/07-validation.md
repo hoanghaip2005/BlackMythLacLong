@@ -47,3 +47,12 @@ The CH-01 vertical slice is ready for cross-discipline review when:
 4. B-01 supports at least one force victory and one release test path.
 5. State log records every required flag and one boss fate.
 6. S08 shows a visibly different aftermath for released, force and absorbed.
+
+## Hidden content acceptance (ADR-004)
+
+- [ ] `CH-01-HIDDEN` là tùy chọn; bỏ qua vẫn đạt `CH01_COMPLETE` và không khóa `CH01_END_*`.
+- [ ] `HB-01` Ma Da có đủ ba fate (`released`/`defeated_by_force`/`absorbed`) và chỉ `released` cộng `hidden_released`.
+- [ ] `released` đòi một hành động (chuông "không-về" + gọi tên), không phải một nhãn thoại.
+- [ ] `hidden_truth` đào sâu `TRUTH_SEAL_WAS_NEVER_BROKEN` mà KHÔNG tạo truth flag toàn cục mới và KHÔNG tạo Long Ngọc mới.
+- [ ] `hidden_released` clamp 0..5; không tăng ở nhánh force/absorb.
+- [ ] Cultural review cho `ma da` (tín ngưỡng dân gian) hoàn tất trước khi `approved`; tông bi thương, không mua vui rùng rợn.

@@ -22,6 +22,7 @@ Các giá trị dùng trong tài liệu, chưa phải code runtime.
 | `tribal_trust` | 0..6 | 0 | Mức tin tưởng tổng hợp của các cộng đồng |
 | `dragon_hunger` | 0..8 | 0 | Mức Long Nhân dùng quyền lực để chiếm đoạt |
 | `relics_purified` | 0..5 | 0 | Số Long Ngọc được thanh tẩy thay vì cưỡng đoạt |
+| `hidden_released` | 0..5 | 0 | Số boss ẩn "Oan Khuất Ẩn" (`HB-01..HB-05`) đã được giải thoát (ADR-004) |
 | `truth_flags` | set | rỗng | Các sự thật đã xác nhận |
 | `boss_fates` | map | rỗng | Kết cục riêng của từng boss |
 | `final_decision` | enum | null | Quyết định tại tế đàn |
@@ -32,6 +33,7 @@ Các giá trị dùng trong tài liệu, chưa phải code runtime.
 - Hoàn thành bond của một Long Ngọc: `relics_purified +1`, `memory_recovered +1`.
 - Cưỡng đoạt nguyên thần: `dragon_hunger +1`.
 - Thu hồi nguyên thần sau khi giải thoát boss: `mercy_marks +1`.
+- Giải thoát một boss ẩn `HB-0X` (Oan Khuất Ẩn): `hidden_released +1`, `mercy_marks +1`. Cưỡng đoạt hoặc hạ boss ẩn: `dragon_hunger +1`, không tăng `hidden_released` (ADR-004).
 - Hạ boss không tìm hiểu nguyên nhân: không cộng `memory_recovered`, có thể giảm `tribal_trust`.
 - Lựa chọn vì lợi ích ngắn hạn nhưng gây hại cho cộng đồng: `dragon_hunger +1`.
 - Không phạt người chơi chỉ vì chọn chiến đấu; phạt vì bỏ qua chủ ý và hậu quả đã được cho thấy.
@@ -41,11 +43,30 @@ Các giá trị dùng trong tài liệu, chưa phải code runtime.
 
 | Mảnh | Boss giữ | Bond cần giải quyết | Truth flag |
 |---|---|---|---|
-| `LG-01` | Ngư Tinh | Đối diện lời hứa bảo hộ bị bỏ mặc của Thủy tộc | `truth_seal_was_never_broken` |
-| `LG-02` | Hồ Tinh | Trả lại tên thật cho người bị biến thành bóng | `truth_fox_was_a_refuge` |
-| `LG-03` | Mộc Tinh | Giải thoát vong linh khỏi lời thề chiến tranh | `truth_old_army_was_bound` |
-| `LG-04` | Đại Bàng Tinh | Gọi tên tội lỗi của các bộ tộc bị ruồng bỏ | `truth_exile_was_erased` |
-| `LG-05` | Song Giao | Chấm dứt vòng tranh giành quyền kiểm soát dòng nước | `truth_conflict_was_fed` |
+| `LG-01` | Ngư Tinh | Đối diện lời hứa bảo hộ bị bỏ mặc của Thủy tộc | `TRUTH_SEAL_WAS_NEVER_BROKEN` |
+| `LG-02` | Hồ Tinh | Trả lại tên thật cho người bị biến thành bóng | `TRUTH_FOX_WAS_A_REFUGE` |
+| `LG-03` | Mộc Tinh | Giải thoát vong linh khỏi lời thề chiến tranh | `TRUTH_OLD_ARMY_WAS_BOUND` |
+| `LG-04` | Đại Bàng Tinh | Gọi tên tội lỗi của các bộ tộc bị ruồng bỏ | `TRUTH_EXILE_WAS_ERASED` |
+| `LG-05` | Song Giao | Chấm dứt vòng tranh giành quyền kiểm soát dòng nước | `TRUTH_CONFLICT_WAS_FED` |
+
+## 3b. Oan Khuất Ẩn (boss ẩn mỗi chương — ADR-004)
+
+Mỗi chương `CH-01..CH-05` có một **màn ẩn** (`CH-0X-HIDDEN`) và một **boss ẩn** (`HB-0X`) tùy chọn. Boss ẩn cũng là một bi kịch, đào sâu `TRUTH_*` của chương thành một lớp `hidden_truth`, và là điều kiện của full completion.
+
+| Boss ẩn | Chương | Màn ẩn | `hidden_truth` (đào sâu truth flag) |
+|---|---|---|---|
+| `HB-01` Ma Da — Vong Đáy Vực | CH-01 | Bãi xác thuyền dưới vực | Lời hứa bảo hộ từng *thất bại*, "phong ấn" chưa từng là vấn đề |
+| `HB-02` Bóng Vô Danh | CH-02 | Hang gương dưới đầm | Hồ Tinh từng *giữ tên* cho người chạy loạn |
+| `HB-03` Tướng Quân Vô Đầu | CH-03 | Gò mộ dưới rễ | Một phần vong binh *tự nguyện* ở lại vì sợ bị quên |
+| `HB-04` Tù Trưởng Lệ Đá | CH-04 | Khe đá dựng (rừng bia không tên) | Tên bộ tộc bị xóa *có chủ đích*, không phải do thời gian |
+| `HB-05` Giao Mẫu | CH-05 | Miếu chìm ở ngã ba nước | Có *nạn nhân thứ ba* của cuộc tranh chấp mà cả hai giao đã quên |
+
+Quy tắc:
+
+- Chỉ `released` mới cộng `hidden_released`/`mercy_marks`; `absorbed`/`defeated_by_force` thì không (và `absorbed` cộng `dragon_hunger`).
+- Boss ẩn **không** tạo Long Ngọc mới, **không** tạo truth flag toàn cục mới; nó chỉ mở lớp `hidden_truth` làm sâu thêm truth flag sẵn có của chương.
+- `CH-06` không có boss ẩn; thay vào đó `hidden_released = 5` mở **lớp hòa giải trọn vẹn** của `E-04`.
+- Bỏ boss ẩn vẫn hoàn thành chương và vẫn đạt `E-01/E-02/E-03`; chỉ `E-04` đòi full completion.
 
 ## 4. Lựa chọn cấp scene
 
@@ -89,6 +110,7 @@ Kiểm tra theo thứ tự, từ trên xuống. Chỉ chọn một ending.
 - `mercy_marks >= 4`.
 - `tribal_trust >= 5`.
 - Có đủ năm `truth_flags`.
+- `hidden_released = 5` — đã giải thoát cả năm Oan Khuất Ẩn (ADR-004).
 - Không có quá hai boss ở trạng thái `absorbed`.
 
 Kết quả: Hỗn Mang không bị đánh bại bằng quyền lực. Các cộng đồng nhìn thấy phần lịch sử của mình, Long Ngọc mất chức năng cai trị và trở thành vật chứng sống.
@@ -123,7 +145,10 @@ Kết quả: Long Nhân trở thành người canh giữ Long Mạch. Đây là 
 
 ### Fallback khi chọn `reconcile` nhưng thiếu điều kiện
 
-Nếu chọn `reconcile` nhưng thiếu bất kỳ điều kiện E-04 nào, nghi lễ thất bại một phần. Hệ thống chuyển sang `destroy` ở mức bi kịch: Long Ngọc vỡ, nhưng các cộng đồng chưa kịp nhìn thấy sự thật. Gắn tag `E-03-BITTER` để khác với E-03 chuẩn.
+Nếu chọn `reconcile` nhưng thiếu điều kiện E-04, kiểm tra theo hai mức:
+
+- **Thiếu `hidden_released = 5` nhưng đủ các điều kiện lõi còn lại** (`memory_recovered = 5`, `mercy_marks >= 4`, `tribal_trust >= 5`, đủ năm `truth_flags`, không quá hai boss `absorbed`): nghi lễ hòa giải đạt **một phần**. Các cộng đồng lớn nhìn thấy sự thật, nhưng năm oan khuất ẩn chưa được gọi tên nên còn dư oán. Gắn tag `E-04-PARTIAL` (hòa giải chưa trọn; khác `E-04` chuẩn ở hậu cảnh và một dòng thoại thừa nhận "còn những cái tên chưa được gọi").
+- **Thiếu bất kỳ điều kiện lõi nào ở trên**: nghi lễ thất bại. Hệ thống chuyển sang `destroy` ở mức bi kịch: Long Ngọc vỡ, nhưng các cộng đồng chưa kịp nhìn thấy sự thật. Gắn tag `E-03-BITTER` để khác với E-03 chuẩn.
 
 ## 8. Nguyên tắc chống nhánh giả
 

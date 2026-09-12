@@ -1,0 +1,120 @@
+schema_version: 0.2
+chapter:
+  id: CH-04
+  title: Lệ Đá Đỉnh Sương
+  status: draft
+  package_path: docs/harness/chapter-04
+  long_ngoc: LG-04
+  boss: B-04
+  truth_flag: TRUTH_EXILE_WAS_ERASED
+  hidden_boss: HB-04
+  hidden_scene: CH-04-HIDDEN
+  hidden_quest: Q-CH04-00H
+  visual_design: 08-visual-design.md
+  combat_phases: 2
+  boss_intro: B04-P0
+  boss_phase_ids:
+    - B04-P1-DIVE
+    - B04-P2-VESSEL
+scene_sequence:
+  - id: CH-04-S01
+    title: Đường đá vỡ
+    required: true
+  - id: CH-04-S02
+    title: Hồn bị bắt trong lông vũ
+    required: true
+  - id: CH-04-S03
+    title: Bản đồ bộ tộc mất tên
+    required: true
+  - id: CH-04-S04
+    title: Phán quyết trên vực
+    required: true
+  - id: CH-04-B04
+    title: Đại Bàng Tinh
+    required: true
+  - id: CH-04-S05
+    title: Lệ đá rơi xuống mây
+    required: true
+  - id: CH-04-HIDDEN
+    title: Khe đá dựng
+    required: false
+quests:
+  - id: Q-CH04-001
+    title: Phán quyết trên đỉnh Thạch Môn
+    type: main
+    required: true
+  - id: Q-CH04-002
+    title: Những chiếc lông giữ hồn
+    type: optional
+    required: false
+  - id: Q-CH04-003
+    title: Lời kể của bộ tộc mất tên
+    type: bond
+    required: false
+  - id: Q-CH04-004
+    title: Bản đồ bộ tộc mất tên
+    type: exploration
+    required: false
+  - id: Q-CH04-00H
+    title: Khe đá dựng
+    type: hidden
+    required: false
+choices:
+  - id: C-CH04-001
+    scene: CH-04-S02
+    title: Hồn trong lông vũ
+  - id: C-CH04-002
+    scene: CH-04-S04
+    title: Cổng Thạch Môn - săn hay nghe
+  - id: C-CH04-003
+    scene: CH-04-S04
+    title: Phán quyết trên vực
+  - id: C-CH04-004
+    scene: CH-04-S05
+    title: Cách nhận nguyên thần
+  - id: C-CH04-00H
+    scene: CH-04-HIDDEN
+    title: Khắc lại tên hay cưỡng đoạt lệ đá
+boss_fates:
+  - released
+  - defeated_by_force
+  - absorbed
+characters:
+  - id: PLAYER-LONG-NHAN
+    role: player
+    visual_card: ../chapter-01/08-visual-design.md#character-card-long-nhan
+    blend_file: assets/characters/long_nhan/long_nhan_v3.blend
+    preview_file: assets/characters/long_nhan/long_nhan_v3_hero.png
+  - id: B-04
+    role: boss
+    visual_card: 08-visual-design.md#character-card-b-04-dai-bang-tinh
+    blend_file: null   # TBD - chưa có asset
+    preview_file: null # TBD - chưa có asset
+  - id: HB-04
+    role: hidden_boss
+    visual_card: 08-visual-design.md#character-card-hb-04-tu-truong-le-da
+    blend_file: null   # TBD - chưa có asset
+    preview_file: null # TBD - chưa có asset
+  - id: NPC-CH04-BA-LE
+    role: npc
+    faction: outcast_tribes
+  - id: NPC-CH04-HON-TUONG
+    role: npc
+    faction: outcast_tribes
+  - id: ECHO-LAC-LONG-04
+    role: echo
+handoff_docs:
+  narrative:
+    - 00-chapter-brief.md
+    - 01-scene-flow.md
+    - 02-cast-and-factions.md
+    - 03-quests-and-choices.md
+    - 04-dialogue-script.md
+  encounter:
+    - 05-boss-encounter.md
+  production:
+    - 06-state-and-handoff.md
+  visual:
+    - 08-visual-design.md
+  validation:
+    - 07-validation.md

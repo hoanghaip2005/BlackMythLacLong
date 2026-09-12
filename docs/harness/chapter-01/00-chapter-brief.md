@@ -64,6 +64,15 @@ Ngư Tinh bị đánh bại nhưng bond chưa được giải quyết. Long Nhâ
 
 Long Nhân cưỡng đoạt nguyên thần sau trận đấu. `dragon_hunger` tăng. Nước quanh đền chuyển đen trong vài nhịp, gieo mầm cho Ending E-02 nhưng không khóa ending.
 
+## Oan Khuất Ẩn (boss ẩn — ADR-004)
+
+CH-01 có một màn ẩn tùy chọn `CH-01-HIDDEN` (Bãi xác thuyền dưới vực) và boss ẩn `HB-01` Ma Da — Vong Đáy Vực.
+
+- Không chặn tiến độ chính; bỏ qua vẫn đạt `CH01_END_*` và `CH01_COMPLETE`.
+- Giải thoát `HB-01` (đánh hồi chuông "không-về" + gọi tên một vong) ⇒ `hidden_released +1`, `mercy_marks +1`, và mở `hidden_truth` đào sâu `TRUTH_SEAL_WAS_NEVER_BROKEN`: *lời hứa bảo hộ từng thất bại trước cả khi đền chìm*.
+- `hidden_released = 5` (đủ 5 chương) là một điều kiện của kết thúc thật `E-04` (xem `02` §7).
+- Chi tiết: `01-scene-flow.md` (CH-01-HIDDEN), `03-quests-and-choices.md` (Q-CH01-00H), `05-boss-encounter.md` (HB-01), `08-visual-design.md` (character card HB-01).
+
 ## Handoff summary
 
 CH-01 cần ba lớp bàn giao:

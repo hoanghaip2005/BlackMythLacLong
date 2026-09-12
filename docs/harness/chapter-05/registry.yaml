@@ -1,0 +1,105 @@
+schema_version: 0.2
+chapter:
+  id: CH-05
+  title: Song Giao Tế Thủy
+  status: draft
+  package_path: docs/harness/chapter-05
+  long_ngoc: LG-05
+  boss: B-05
+  hidden_boss: HB-05
+  truth_flag: TRUTH_CONFLICT_WAS_FED
+  visual_design: 08-visual-design.md
+  combat_phases: 2
+  boss_intro: B05-P0
+  boss_phase_ids:
+    - B05-A-TWIN
+    - B05-B-MERGED
+  hidden_scene: CH-05-HIDDEN
+scene_sequence:
+  - id: CH-05-S01
+    title: Làng nổi
+    required: true
+  - id: CH-05-S02
+    title: Hai tiếng gọi dưới lũ
+    required: true
+  - id: CH-05-S03
+    title: Bè chiến giữa song giao
+    required: true
+  - id: CH-05-S04
+    title: Mảnh ngọc lộ diện
+    required: true
+  - id: CH-05-B05A
+    title: Song Giao
+    required: true
+  - id: CH-05-B05B
+    title: Hắc Giao Long
+    required: true
+  - id: CH-05-S05
+    title: Nước rút để lộ bậc tế đàn
+    required: true
+  - id: CH-05-HIDDEN
+    title: Miếu chìm ở ngã ba nước
+    required: false
+quests:
+  - id: Q-CH05-001
+    title: Ngã ba không chịu lặng
+    type: main
+    required: true
+  - id: Q-CH05-002
+    title: Hai bên đều có lý
+    type: optional
+    required: false
+  - id: Q-CH05-003
+    title: Người mẹ dưới phù sa
+    type: bond
+    required: false
+  - id: Q-CH05-004
+    title: Dấu tay trong bùn
+    type: exploration
+    required: false
+  - id: Q-CH05-00H
+    title: Miếu chìm ở ngã ba nước
+    type: hidden
+    required: false
+choices:
+  - id: C-CH05-001
+    scene: CH-05-S02
+    title: Nghe bên nào trước
+  - id: C-CH05-002
+    scene: CH-05-S03
+    title: Kích chúng đánh nhau hay phá nguồn nước
+  - id: C-CH05-003
+    scene: CH-05-B05B
+    title: Cách nhận nguyên thần hợp thể
+  - id: C-CH05-00H
+    scene: CH-05-HIDDEN
+    title: Cách đối diện Giao Mẫu
+boss_fates:
+  - released
+  - defeated_by_force
+  - absorbed
+characters:
+  - id: PLAYER-LONG-NHAN
+    role: player
+    visual_card: 08-visual-design.md#character-card-long-nhan
+  - id: B-05
+    role: boss
+    visual_card: 08-visual-design.md#character-card-b-05-song-giao--hac-giao-long
+  - id: HB-05
+    role: hidden_boss
+    visual_card: 08-visual-design.md#character-card-hb-05-giao-mau
+handoff_docs:
+  narrative:
+    - 00-chapter-brief.md
+    - 01-scene-flow.md
+    - 02-cast-and-factions.md
+    - 03-quests-and-choices.md
+    - 04-dialogue-script.md
+  encounter:
+    - 05-boss-encounter.md
+  production:
+    - 06-state-and-handoff.md
+  visual:
+    - 08-visual-design.md
+  validation:
+    - 07-validation.md

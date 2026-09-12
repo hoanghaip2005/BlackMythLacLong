@@ -1,0 +1,132 @@
+schema_version: 0.2
+chapter:
+  id: CH-02
+  title: Ảo Ảnh Đầm Cáo
+  status: draft
+  package_path: docs/harness/chapter-02
+  long_ngoc: LG-02
+  boss: B-02
+  truth_flag: TRUTH_FOX_WAS_A_REFUGE
+  hidden_boss: HB-02
+  hidden_scene: CH-02-HIDDEN
+  hidden_quest: Q-CH02-00H
+  visual_design: 08-visual-design.md
+  combat_phases: 2
+  boss_intro: B02-P0
+  boss_phase_ids:
+    - B02-P1-MASK
+    - B02-P2-CUUVI
+scene_sequence:
+  - id: CH-02-S01
+    title: Làng không bóng
+    required: true
+  - id: CH-02-S02
+    title: Bài hát dưới sương
+    required: true
+  - id: CH-02-S03
+    title: Ba khuôn mặt của Hồ Tinh
+    required: true
+  - id: CH-02-S04
+    title: Đạo sĩ bị thao túng
+    required: true
+  - id: CH-02-S05
+    title: Tên thật trong gương nước
+    required: true
+  - id: CH-02-B02
+    title: Cửu Vĩ hiện hình
+    required: true
+  - id: CH-02-S06
+    title: Người sống gọi lại tên mình
+    required: true
+  - id: CH-02-HIDDEN
+    title: Hang gương dưới đầm
+    required: false
+quests:
+  - id: Q-CH02-001
+    title: Tên dưới đầm sương
+    type: main
+    required: true
+  - id: Q-CH02-002
+    title: Ba ngọn ma trơi
+    type: optional
+    required: false
+  - id: Q-CH02-003
+    title: Gọi lại tên mình
+    type: bond
+    required: false
+  - id: Q-CH02-004
+    title: Kẻ ăn tên trong sương
+    type: exploration
+    required: false
+  - id: Q-CH02-00H
+    title: Cái tên bị Hỗn Mang ăn
+    type: bond
+    required: false
+choices:
+  - id: C-CH02-001
+    scene: CH-02-S02
+    title: Tiếng hát trong sương
+  - id: C-CH02-002
+    scene: CH-02-S04
+    title: Đứng về phía ai
+  - id: C-CH02-003
+    scene: CH-02-S05
+    title: Cách nhận Cửu Vĩ
+  - id: C-CH02-00H
+    scene: CH-02-HIDDEN
+    title: Cái tên bị ăn
+boss_fates:
+  - released
+  - defeated_by_force
+  - absorbed
+characters:
+  - id: PLAYER-LONG-NHAN
+    role: player
+    visual_card: 08-visual-design.md#character-card-long-nhan
+    blend_file: assets/characters/long_nhan/long_nhan_v3.blend
+    preview_file: assets/characters/long_nhan/long_nhan_v3_hero.png
+  - id: B-02
+    role: boss
+    visual_card: 08-visual-design.md#character-card-b-02-hồ-tinh--cửu-vĩ
+    blend_file: TBD
+    preview_file: TBD
+  - id: HB-02
+    role: hidden_boss
+    visual_card: 08-visual-design.md#character-card-hb-02-bóng-vô-danh
+    blend_file: TBD
+    preview_file: TBD
+  - id: NPC-CH02-NGUOI-HAT
+    role: npc
+    visual_card: 02-cast-and-factions.md#người-hát--npc-ch02-nguoi-hat
+    blend_file: TBD
+    preview_file: TBD
+  - id: NPC-CH02-DAO-SI-KHAU
+    role: npc
+    visual_card: 02-cast-and-factions.md#đạo-sĩ-khâu--npc-ch02-dao-si-khau
+    blend_file: TBD
+    preview_file: TBD
+  - id: NPC-CH02-CU-DAM
+    role: npc
+    visual_card: 02-cast-and-factions.md#cụ-đàm--npc-ch02-cu-dam
+    blend_file: TBD
+    preview_file: TBD
+  - id: ECHO-LAC-LONG-02
+    role: memory_echo
+    visual_card: 02-cast-and-factions.md#tiếng-vọng-lạc-long
+    blend_file: TBD
+    preview_file: TBD
+handoff_docs:
+  narrative:
+    - 00-chapter-brief.md
+    - 01-scene-flow.md
+    - 02-cast-and-factions.md
+    - 03-quests-and-choices.md
+    - 04-dialogue-script.md
+  encounter:
+    - 05-boss-encounter.md
+  production:
+    - 06-state-and-handoff.md
+  visual:
+    - 08-visual-design.md
+  validation:
+    - 07-validation.md

@@ -1,0 +1,135 @@
+schema_version: 0.2
+chapter:
+  id: CH-06
+  title: Hỗn Mang Tế Đàn
+  status: draft
+  package_path: docs/harness/chapter-06
+  long_ngoc: null            # dùng đủ 5 mảnh LG-01..LG-05, không thu mảnh mới
+  boss: B-06
+  truth_flag: null           # CH-06 XÁC NHẬN TRUTH_SEAL_WAS_NEVER_BROKEN (không sở hữu truth flag mới)
+  confirms_truth: TRUTH_SEAL_WAS_NEVER_BROKEN
+  hidden_boss: null          # CH-06 không có boss ẩn; full completion mở lớp hòa giải trọn vẹn của E-04
+  full_completion_scene: CH-06-FULL
+  visual_design: 08-visual-design.md
+  combat_phases: 2
+  boss_intro: B06-P0
+  boss_phase_ids:
+    - B06-P1-MIRROR
+    - B06-P2-CHOIR
+  final_decision:
+    variable: final_decision
+    options:
+      - restore
+      - absorb
+      - destroy
+      - reconcile
+  endings:
+    - id: E-01
+      key: LONG_VUONG
+      from: restore
+    - id: E-02
+      key: TAN_HON_MANG
+      from: absorb (hoặc restore khi dragon_hunger >= 4)
+    - id: E-03
+      key: DOAN_TUYET_LONG_MACH
+      from: destroy
+    - id: E-04
+      key: HOA_GIAI_BACH_TOC
+      from: reconcile (đủ điều kiện, gồm hidden_released = 5)
+    - id: E-04-PARTIAL
+      tag: true
+      from: reconcile đủ điều kiện lõi nhưng hidden_released < 5
+    - id: E-03-BITTER
+      tag: true
+      from: reconcile thiếu điều kiện lõi
+scene_sequence:
+  - id: CH-06-S01
+    title: Bậc đá không có bóng
+    required: true
+  - id: CH-06-S02
+    title: Năm ký ức mở đồng thời
+    required: true
+  - id: CH-06-S03
+    title: Hỗn Mang sao chép Long Nhân
+    required: true
+  - id: CH-06-S04
+    title: Đấu tay đôi (B-06 Hỗn Mang)
+    required: true
+  - id: CH-06-FULL
+    title: Chứng nhân oan khuất (chỉ mở khi hidden_released = 5)
+    required: false
+  - id: CH-06-S05
+    title: Quyết định cuối
+    required: true
+  - id: CH-06-END
+    title: Ending card và hậu cảnh
+    required: true
+quests:
+  - id: Q-CH06-001
+    title: Quyết định tại Nghĩa Lĩnh
+    type: main
+    required: true
+  - id: Q-CH06-002
+    title: Bậc đá không bóng
+    type: exploration
+    required: false
+  - id: Q-CH06-003
+    title: Năm ký ức mở đồng thời
+    type: bond
+    required: true
+  - id: Q-CH06-004
+    title: Chứng nhân oan khuất
+    type: hidden
+    required: false
+choices:
+  - id: C-CH06-001
+    scene: CH-06-S05
+    title: Quyết định cuối tại tế đàn (final_decision)
+  - id: C-CH06-002
+    scene: CH-06-S03
+    title: Đối đáp với Hỗn Mang
+  - id: C-CH06-003
+    scene: CH-06-S04
+    title: Hành động không thể sao chép (Canon Lock 8)
+boss_fates:
+  - released            # = reconcile: Hóa Giải (Hỗn Mang tan khi nợ lịch sử được trả về đúng chủ)
+  - defeated_by_force   # = restore/destroy: Dồn Nén / Mất Nguồn
+  - absorbed            # = absorb: Đồng Hóa
+characters:
+  - id: PLAYER-LONG-NHAN
+    role: player
+    visual_card: 08-visual-design.md#character-card-long-nhan
+    blend_file: assets/characters/long_nhan/long_nhan_v3.blend
+    preview_file: assets/characters/long_nhan/long_nhan_v3_hero.png
+  - id: B-06
+    role: boss
+    name: Hỗn Mang (bản sao Long Nhân)
+    visual_card: 08-visual-design.md#character-card-b-06-hỗn-mang
+    blend_file: TBD
+    preview_file: TBD
+  - id: ECHO-LAC-LONG-06
+    role: memory_echo
+    visual_card: 02-cast-and-factions.md
+    blend_file: TBD
+    preview_file: TBD
+returning_witnesses:        # hiện về ở CH-06-FULL khi hidden_released = 5 (không phải nhân vật mới của CH-06)
+  - HB-01
+  - HB-02
+  - HB-03
+  - HB-04
+  - HB-05
+handoff_docs:
+  narrative:
+    - 00-chapter-brief.md
+    - 01-scene-flow.md
+    - 02-cast-and-factions.md
+    - 03-quests-and-choices.md
+    - 04-dialogue-script.md
+  encounter:
+    - 05-boss-encounter.md
+  production:
+    - 06-state-and-handoff.md
+  visual:
+    - 08-visual-design.md
+  validation:
+    - 07-validation.md

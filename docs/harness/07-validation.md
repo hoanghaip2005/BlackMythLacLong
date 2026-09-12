@@ -14,7 +14,7 @@
 - [ ] Mỗi choice quan trọng có state change.
 - [ ] State change có feedback gần và/hoặc feedback xa.
 - [ ] Không có ending condition mâu thuẫn với Resolution Rules.
-- [ ] `reconcile` thiếu điều kiện chuyển đúng sang `E-03-BITTER`.
+- [ ] `reconcile` thiếu điều kiện lõi chuyển đúng sang `E-03-BITTER`; nếu chỉ thiếu `hidden_released = 5` (đủ các điều kiện lõi khác) thì chuyển sang `E-04-PARTIAL` (ADR-004).
 - [ ] `absorb` hoặc `dragon_hunger >= 4` có dấu hiệu được gieo trước ending.
 - [ ] Người chơi có cách suy luận điều kiện ending qua fiction.
 
@@ -45,6 +45,16 @@
 - [ ] Điểm yếu có ý nghĩa biểu tượng và chức năng chiến đấu.
 - [ ] Có ít nhất hai boss fate khác nhau.
 - [ ] Aftermath thay đổi theo fate hoặc state liên quan.
+
+## 5b. Hidden boss validation (Oan Khuất Ẩn — ADR-004)
+
+- [ ] Mỗi chương `CH-01..CH-05` có đúng một boss ẩn `HB-0X` và một màn ẩn `CH-0X-HIDDEN` (tùy chọn). `CH-06` không có boss ẩn.
+- [ ] Boss ẩn có `inner_wound`, `desire` và `bond_resolution`; không mô tả như ác tuyệt đối.
+- [ ] Bỏ boss ẩn vẫn hoàn thành chương; không khóa `CH0X_END_*` hay tiến độ chính.
+- [ ] Chỉ `released` cộng `hidden_released` (+`mercy_marks`); `defeated_by_force` không cộng; `absorbed` cộng `dragon_hunger` và không cộng `hidden_released`.
+- [ ] `hidden_truth` chỉ đào sâu `TRUTH_*` của chương; không tạo truth flag toàn cục mới, không tạo Long Ngọc thứ sáu.
+- [ ] `hidden_released` clamp 0..5; `E-04` đòi `hidden_released = 5`.
+- [ ] Boss ẩn chạm tín ngưỡng dân gian (vd `HB-01` ma da) có ghi chú nhạy cảm và cultural review.
 
 ## 6. AI output validation
 

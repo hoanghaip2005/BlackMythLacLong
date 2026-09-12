@@ -1,0 +1,133 @@
+schema_version: 0.2
+chapter:
+  id: CH-03
+  title: Huyết Mộc Đoạt Mệnh
+  status: draft
+  package_path: docs/harness/chapter-03
+  long_ngoc: LG-03
+  boss: B-03
+  truth_flag: TRUTH_OLD_ARMY_WAS_BOUND
+  hidden_boss: HB-03
+  hidden_scene: CH-03-HIDDEN
+  hidden_quest: Q-CH03-00H
+  visual_design: 08-visual-design.md
+  combat_phases: 2
+  boss_intro: B03-P0
+  boss_phase_ids:
+    - B03-P1-CANOPY
+    - B03-P2-BLOODROOT
+  hidden_boss_phase_ids:
+    - HB03-P1-OATHKEEPER
+scene_sequence:
+  - id: CH-03-S01
+    title: Cổng Phong Châu bị nuốt
+    required: true
+  - id: CH-03-S02
+    title: Lính gác không mặt
+    required: true
+  - id: CH-03-S03
+    title: Nghĩa địa dưới rễ
+    required: true
+  - id: CH-03-S04
+    title: Lời thề của người chết
+    required: true
+  - id: CH-03-S05
+    title: Lõi đỏ thức dậy
+    required: true
+  - id: CH-03-B03
+    title: Mộc Tinh
+    required: true
+  - id: CH-03-S06
+    title: Tiếng binh khí im
+    required: true
+  - id: CH-03-HIDDEN
+    title: Gò mộ dưới rễ (Oan Khuất Ẩn)
+    required: false
+quests:
+  - id: Q-CH03-001
+    title: Lời thề dưới rễ
+    type: main
+    required: true
+  - id: Q-CH03-002
+    title: Ba tấm bia thề
+    type: optional
+    required: false
+  - id: Q-CH03-003
+    title: Người chết có tên
+    type: bond
+    required: false
+  - id: Q-CH03-004
+    title: Dấu móng trên bia
+    type: exploration
+    required: false
+  - id: Q-CH03-00H
+    title: Gò mộ dưới rễ
+    type: hidden
+    required: false
+choices:
+  - id: C-CH03-001
+    scene: CH-03-S02
+    title: Giải thoát hay giữ hàng ngũ
+  - id: C-CH03-002
+    scene: CH-03-S04
+    title: Lời thề của người chết
+  - id: C-CH03-003
+    scene: CH-03-B03
+    title: Cách nhận nguyên thần
+  - id: C-CH03-00H
+    scene: CH-03-HIDDEN
+    title: Tướng Quân Vô Đầu
+boss_fates:
+  - released
+  - defeated_by_force
+  - absorbed
+characters:
+  - id: PLAYER-LONG-NHAN
+    role: player
+    visual_card: 08-visual-design.md#character-card-long-nhan
+    blend_file: assets/characters/long_nhan/long_nhan_v3.blend
+    preview_file: assets/characters/long_nhan/long_nhan_v3_hero.png
+  - id: B-03
+    role: boss
+    name: Mộc Tinh
+    visual_card: 08-visual-design.md#character-card-b-03-mộc-tinh
+    blend_file: TBD
+    preview_file: TBD
+  - id: HB-03
+    role: hidden_boss
+    name: Tướng Quân Vô Đầu
+    visual_card: 08-visual-design.md#character-card-hb-03-tướng-quân-vô-đầu
+    blend_file: TBD
+    preview_file: TBD
+  - id: NPC-CH03-HIEN
+    role: npc
+    name: Hiến (vong linh muốn buông)
+    visual_card: 02-cast-and-factions.md
+    blend_file: TBD
+    preview_file: TBD
+  - id: NPC-CH03-TRUONG
+    role: npc
+    name: Trưởng (vong linh giữ lời thề)
+    visual_card: 02-cast-and-factions.md
+    blend_file: TBD
+    preview_file: TBD
+  - id: ECHO-LAC-LONG-03
+    role: memory_echo
+    visual_card: 02-cast-and-factions.md
+    blend_file: TBD
+    preview_file: TBD
+handoff_docs:
+  narrative:
+    - 00-chapter-brief.md
+    - 01-scene-flow.md
+    - 02-cast-and-factions.md
+    - 03-quests-and-choices.md
+    - 04-dialogue-script.md
+  encounter:
+    - 05-boss-encounter.md
+  production:
+    - 06-state-and-handoff.md
+  visual:
+    - 08-visual-design.md
+  validation:
+    - 07-validation.md
