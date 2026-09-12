@@ -8,6 +8,7 @@
 | `Q-CH01-002` | Optional | Ba hồi chuông | Không | Cải thiện khả năng đọc arena, mở lore |
 | `Q-CH01-003` | Bond | Người bị bỏ lại | Có để `released` | Giải quyết bond của `LG-01` |
 | `Q-CH01-004` | Exploration | Dấu móng trên đá | Không | Gieo mồi cho Hỗn Mang và CH-02 |
+| `Q-CH01-00H` | Hidden | Vong đáy vực | Không | Mở `HB-01`; cộng `hidden_released` nếu giải thoát (ADR-004) |
 
 ## Q-CH01-001: Lời hứa dưới vực
 
@@ -97,6 +98,34 @@ Gieo mồi rằng yêu khí có tác động chủ động lên ký ức, nhưng
 
 - Lore fragment: “một bóng đen không có hình hài kéo tiếng gọi đi ngược dòng”.
 - Nếu hoàn thành, Tiếng Vọng Lạc Long ở `CH-01-S07` thêm một câu hỏi về “thứ đứng sau nỗi oán”.
+
+## Q-CH01-00H: Vong đáy vực (Oan Khuất Ẩn — ADR-004)
+
+### Premise
+
+Quest ẩn tùy chọn mở màn ẩn `CH-01-HIDDEN` và boss ẩn `HB-01` (Ma Da — Vong Đáy Vực). Không bắt buộc; không chặn `CH01_END_*`.
+
+### Unlock
+
+- Sau `CH-01-S06`, trước khi rời vùng nước chết (`CH-01-S08`).
+- Gợi mở khi `CH01_GLYPHS_READ_3` hoặc `Q_CH01_002_COMPLETE`: khi xoáy rút, một dòng tối kéo *xuống dưới vực* thay vì lên bờ.
+
+### Objectives
+
+1. Lặn xuống bãi xác thuyền dưới vực.
+2. Nhận ra `ma da` kéo người sống vì muốn được *nhớ tên*, không phải vì đói.
+3. Tìm hồi chuông “không-về” (hồi thứ ba) hoặc một cái tên khắc trên xác thuyền.
+4. Chọn: giải thoát (đánh chuông + gọi tên) hay dẹp/cưỡng đoạt khối vong.
+
+### Effects
+
+- `released`: `boss_fates[HB-01] = released`, `hidden_released +1`, `mercy_marks +1`, `CH01_HIDDEN_RELEASED`; mở `hidden_truth` đào sâu `TRUTH_SEAL_WAS_NEVER_BROKEN`.
+- `defeated_by_force`: `boss_fates[HB-01] = defeated_by_force`; không tăng `hidden_released`.
+- `absorbed`: `boss_fates[HB-01] = absorbed`, `dragon_hunger +1`; không tăng `hidden_released`.
+
+### Cost / fail
+
+Bỏ qua quest hoàn toàn hợp lệ; cost duy nhất là không có `hidden_released` từ CH-01 (ảnh hưởng điều kiện `E-04` về sau). Không có game over.
 
 ## Choice registry
 

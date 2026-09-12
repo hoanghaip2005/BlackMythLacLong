@@ -21,6 +21,7 @@
 - Ba choice chính: `C-CH01-001`, `C-CH01-002`, `C-CH01-003`.
 - Mảnh Long Ngọc: `LG-01`.
 - Truth flag: `TRUTH_SEAL_WAS_NEVER_BROKEN`.
+- Oan Khuất Ẩn (ADR-004): màn ẩn `CH-01-HIDDEN` + boss ẩn `HB-01` Ma Da; giải thoát cộng `hidden_released` (điều kiện `E-04`).
 - Visual language: Đông Sơn/Lạc Việt, vật liệu sông biển, cultural review bắt buộc.
 
 ## Nội dung chưa khóa

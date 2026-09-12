@@ -175,6 +175,47 @@ Da phản sáng ướt nhưng không kim loại. Vết chém cũ phải đọc �
 - **External asset policy:** nếu thay bằng source library, chỉ nhận asset có license thương mại hoặc CC0 tương thích; ghi URL, phiên bản, tác giả và phạm vi sửa trong manifest.
 - **Cultural review:** cần review trước khi thêm motif bề mặt. Sinh học cá vực sâu được ưu tiên hơn ornament để giữ bản sắc CH-01.
 
+## Character card: HB-01 Ma Da (Vong Đáy Vực)
+
+### Identity
+
+- **ID:** `HB-01`
+- **Role:** Hidden grievance boss (ADR-004); oan hồn tập thể của người đi biển bị lời hứa bảo hộ bỏ mặc.
+- **Visual thesis:** không phải "quỷ kéo chân" mua vui; là **khối ký ức ướt** của những người bị quên — đẹp theo nghĩa buồn, nửa trong suốt, lẫn vào nước tối của bãi xác thuyền.
+- **Player read:** đọc được là *nạn nhân của sự bỏ mặc* trước khi đọc được là *mối đe dọa*.
+
+### Silhouette and anatomy
+
+- Dạng người mờ, rã cạnh thành bọt/sợi nước; không có mặt rõ (gương mặt là khoảng trống gợi "bị quên tên").
+- Nhiều bóng chồng lấn thành một khối khi ở phase kéo; tách thành MỘT vong cụ thể ở phase "gọi tên".
+- Quần áo dân đi biển cũ (khố, dây buộc, mảnh lưới) — cùng ngôn ngữ vật liệu Đông Sơn/sông biển như CH-01, không dùng trang phục cung đình.
+- Không dùng móng vuốt quỷ; "kéo" bằng dòng nước và tay bán trong suốt.
+
+### Phase variants
+
+| Phase | Visual change | Narrative read |
+| --- | --- | --- |
+| `HB01-P1` Kéo Xuống | Nhiều bóng chồng, nước tối xoáy nhẹ, xác thuyền làm bệ | Bị níu bởi những kẻ muốn được nhớ |
+| `HB01-P2` Gọi Tên | Khối tách thành một vong, hiện nét người rõ hơn khi được gọi tên | Đối diện một con người cụ thể, không phải quái |
+| `HB01-RELEASED` | Tan thành bọt sángลอย lên, chuông "không-về" vang | Được nhớ → được đi |
+| `HB01-ABSORBED` | Vệt đen bị kéo vào Long Nhân, nước đóng lại tối hơn | Cưỡng đoạt cái đau của người chết |
+
+### Materials, palette
+
+| Token | Hex | Use |
+| --- | --- | --- |
+| `MADA_PALE` | `#9FB6BC` | Thân bán trong suốt, bọt sáng |
+| `MADA_DEEP` | `#0A1A22` | Nước tối bãi xác thuyền |
+| `MADA_LAMP` | `#D8C7A0` | Ánh đèn/vỏ sò còn sót trên xác thuyền |
+| `MADA_YEU` | `#16323A` | Sợi yêu khí đen-xanh, dùng tiết chế |
+
+Tránh làm `ma da` phát sáng "xanh ma trơi" sáo rỗng; ưu tiên ánh sáng lạnh của bọt nước và đèn vỏ sò còn sót (nhất quán với `LN_RIVER_JADE`/đèn của Linh).
+
+### Source, license, cultural review
+
+- **Source strategy:** procedural/custom; chưa có `.blend` (đặt `TBD`).
+- **Cultural review (BẮT BUỘC):** `ma da` là tín ngưỡng dân gian về người chết đuối. Phải review văn hóa trước khi `approved`; giữ tông trang trọng, có chức năng chủ đề (cái giá của lời hứa bảo hộ bị bỏ mặc), không trang trí rùng rợn (01 §11).
+
 ## Acceptance checklist
 
 - [ ] Long Nhân đọc được như nhân vật lấy cảm hứng Việt Nam qua cấu trúc và vật liệu, không phụ thuộc logo hay chữ.

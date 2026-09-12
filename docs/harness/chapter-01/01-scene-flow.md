@@ -216,3 +216,31 @@ Nước rút nhanh. Những vệt đen chạy ngược lên cánh tay Long Nhân
 ### Chapter close
 
 Camera rời khỏi mặt biển, lộ một đường yêu khí mảnh như mực nối về đất liền. Cắt trước khi cho thấy nguồn của nó.
+
+## CH-01-HIDDEN: Bãi xác thuyền dưới vực (Oan Khuất Ẩn — ADR-004)
+
+### Purpose
+
+Màn ẩn tùy chọn. Đào sâu `TRUTH_SEAL_WAS_NEVER_BROKEN`: thứ khiến biển đau không phải "phong ấn vỡ", mà là **những người đã bị bỏ mặc từ trước cả khi đền chìm**. Không chặn tiến độ chính; chỉ mở `hidden_released` cho kết thúc thật `E-04`.
+
+### Unlock
+
+- Khả dụng sau `CH-01-S06` (Xoáy vực) và trước khi rời vùng nước chết ở `CH-01-S08`.
+- Điều kiện gợi mở: đã đọc đủ ba ký hiệu (`CH01_GLYPHS_READ_3`) **hoặc** đã khôi phục ba hồi chuông (`Q_CH01_002_COMPLETE`). Khi xoáy vực rút, để lộ một dòng nước tối kéo *xuống dưới* thay vì lên bờ — chỉ người chơi chịu đi xuống mới thấy `CH-01-HIDDEN`.
+- Không bao giờ ép: bỏ qua màn ẩn, chương vẫn hoàn thành bình thường.
+
+### Beats
+
+1. Lặn xuống dưới vực: một **bãi xác thuyền** xếp lớp, mỗi xác thuyền là một lần lời hứa bảo hộ đến trễ.
+2. Những bóng người chết đuối (`ma da`) không tấn công vì đói — họ **kéo người sống xuống** vì muốn có người *nhớ tên* họ.
+3. Long Nhân nhận ra: đền chỉ sụp *sau* khi những người này đã bị bỏ; "phong ấn" không phải thứ phản bội họ.
+4. Một hồi chuông "không-về" (hồi thứ ba trong ba hồi chuông đền) có thể vang lên ở đây — chìa khóa để giải thoát thay vì đánh.
+
+### Exit
+
+- `released`: đánh hồi chuông "không-về", gọi/ghi tên một vong; bãi xác lặng, `ma da` tan thành bọt sáng. `hidden_released +1`, `mercy_marks +1`, `CH01_HIDDEN_RELEASED`.
+- `defeated_by_force`/`absorbed`: đánh tan hoặc cưỡng đoạt khối vong; `dragon_hunger +1` nếu absorb; không tăng `hidden_released`; biển quanh đền lặng hơn nhưng "nặng" hơn (một dòng thoại của Linh/Tiếng Vọng ghi nhận).
+
+### Hidden boss
+
+`HB-01` Ma Da — Vong Đáy Vực. Encounter chi tiết ở `05-boss-encounter.md` (mục Oan Khuất Ẩn).

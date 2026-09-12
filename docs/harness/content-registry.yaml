@@ -8,31 +8,42 @@ chapters:
     boss: B-01
     long_ngoc: LG-01
     package_path: docs/harness/chapter-01
+    hidden_boss: HB-01
   - id: CH-02
     title: Ảo Ảnh Đầm Cáo
     location: Tây Hồ - Đầm Xác Cáo
     boss: B-02
     long_ngoc: LG-02
+    package_path: docs/harness/chapter-02
+    hidden_boss: HB-02
   - id: CH-03
     title: Huyết Mộc Đoạt Mệnh
     location: Rừng Rậm Phong Châu
     boss: B-03
     long_ngoc: LG-03
+    package_path: docs/harness/chapter-03
+    hidden_boss: HB-03
   - id: CH-04
     title: Lệ Đá Đỉnh Sương
     location: Núi Thạch Môn
     boss: B-04
     long_ngoc: LG-04
+    package_path: docs/harness/chapter-04
+    hidden_boss: HB-04
   - id: CH-05
     title: Song Giao Tế Thủy
     location: Ngã Ba Hạc
     boss: B-05
     long_ngoc: LG-05
+    package_path: docs/harness/chapter-05
+    hidden_boss: HB-05
   - id: CH-06
     title: Hỗn Mang Tế Đàn
     location: Đỉnh Nghĩa Lĩnh
     boss: B-06
     long_ngoc: null
+    package_path: docs/harness/chapter-06
+    hidden_boss: null
 bosses:
   - id: B-01
     name: Ngư Tinh
@@ -52,6 +63,32 @@ bosses:
   - id: B-06
     name: Hỗn Mang
     chapter: CH-06
+hidden_bosses:
+  - id: HB-01
+    name: Ma Da - Vong Đáy Vực
+    chapter: CH-01
+    hidden_scene: CH-01-HIDDEN
+    hidden_truth: lời hứa bảo hộ từng thất bại, không phải phong ấn bị phá
+  - id: HB-02
+    name: Bóng Vô Danh
+    chapter: CH-02
+    hidden_scene: CH-02-HIDDEN
+    hidden_truth: Hồ Tinh từng giữ tên cho người chạy loạn
+  - id: HB-03
+    name: Tướng Quân Vô Đầu
+    chapter: CH-03
+    hidden_scene: CH-03-HIDDEN
+    hidden_truth: một phần vong binh tự nguyện ở lại vì sợ bị quên
+  - id: HB-04
+    name: Tù Trưởng Lệ Đá
+    chapter: CH-04
+    hidden_scene: CH-04-HIDDEN
+    hidden_truth: tên bộ tộc bị xóa có chủ đích, không phải do thời gian
+  - id: HB-05
+    name: Giao Mẫu
+    chapter: CH-05
+    hidden_scene: CH-05-HIDDEN
+    hidden_truth: có nạn nhân thứ ba của cuộc tranh chấp mà hai giao đã quên
 long_ngoc:
   - id: LG-01
     chapter: CH-01
@@ -83,6 +120,7 @@ variables:
   - tribal_trust
   - dragon_hunger
   - relics_purified
+  - hidden_released
   - truth_flags
   - boss_fates
   - final_decision

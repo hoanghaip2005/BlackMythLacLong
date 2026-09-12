@@ -13,6 +13,9 @@ chapter:
   boss_phase_ids:
     - B01-P1-HYBRID
     - B01-P2-ABYSSAL
+  hidden_boss: HB-01
+  hidden_scene: CH-01-HIDDEN
+  hidden_quest: Q-CH01-00H
 scene_sequence:
   - id: CH-01-S01
     title: Trứng đá mở mắt
@@ -41,6 +44,9 @@ scene_sequence:
   - id: CH-01-S08
     title: Bờ nước chết
     required: true
+  - id: CH-01-HIDDEN
+    title: Bãi xác thuyền dưới vực (Oan Khuất Ẩn)
+    required: false
 quests:
   - id: Q-CH01-001
     title: Lời hứa dưới vực
@@ -57,6 +63,10 @@ quests:
   - id: Q-CH01-004
     title: Dấu móng trên đá
     type: exploration
+    required: false
+  - id: Q-CH01-00H
+    title: Vong đáy vực
+    type: hidden
     required: false
 choices:
   - id: C-CH01-001
@@ -83,6 +93,12 @@ characters:
     visual_card: 08-visual-design.md#character-card-b-01-ngu-tinh
     blend_file: assets/bosses/chapter_01_ngutinh/ngu_tinh_ch01.blend
     preview_file: assets/bosses/chapter_01_ngutinh/ngu_tinh_ch01_preview.png
+  - id: HB-01
+    role: hidden_boss
+    name: Ma Da - Vong Đáy Vực
+    visual_card: 08-visual-design.md#character-card-hb-01-ma-da
+    blend_file: TBD
+    preview_file: TBD
 handoff_docs:
   narrative:
     - 00-chapter-brief.md

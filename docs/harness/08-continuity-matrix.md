@@ -6,6 +6,7 @@ Ma trận này là bảng kiểm nhanh khi thêm scene hoặc sửa chapter. M�
 |---|---|---|---|---|---|---|
 | Long Ngọc | LG-01 | LG-02 | LG-03 | LG-04 | LG-05 | đủ 5 mảnh |
 | Boss | Ngư Tinh | Hồ Tinh | Mộc Tinh | Đại Bàng Tinh | Song Giao/Hắc Giao | Hỗn Mang |
+| Oan Khuất Ẩn (`HB`, ADR-004) | HB-01 Ma Da | HB-02 Bóng Vô Danh | HB-03 Tướng Vô Đầu | HB-04 Tù Trưởng Lệ Đá | HB-05 Giao Mẫu | không có (full → `E-04` trọn) |
 | Vết thương vùng đất | bị bỏ rơi | mất tên | lời thề bị trói | bị xóa khỏi lịch sử | tranh quyền dòng nước | lịch sử bị gom thành một kẻ thù |
 | Truth flag | seal chưa vỡ | fox từng là refuge | army bị bound | exile bị erased | conflict bị fed | tổng hợp |
 | Hình ảnh yêu khí | áp lực nước | mặt nạ/bóng | rễ/máu | sương/lông vũ | lũ/hợp thể | bản sao |
@@ -37,6 +38,7 @@ Ma trận này là bảng kiểm nhanh khi thêm scene hoặc sửa chapter. M�
 - Mỗi Long Ngọc chỉ xuất hiện như mảnh chính một lần.
 - Mỗi truth flag có scene gieo mồi và scene xác nhận.
 - Mỗi boss fate có hậu quả ở `aftermath`, không chỉ trong menu.
+- Mỗi chương `CH-01..CH-05` có đúng một boss ẩn `HB-0X` (tùy chọn, ADR-004); `hidden_released` chỉ tăng khi *giải thoát*, và `E-04` đòi `hidden_released = 5` (thiếu thì `reconcile` chỉ đạt `E-04-PARTIAL`).
 - Không có scene sau CH-01 gọi Rìu Thần Thạch Sơn là đã có trước khi Ngư Tinh bị xử lý.
 - Không có thoại trước CH-06 khẳng định chắc chắn phong ấn đã vỡ.
 - Kết thúc không xóa hậu quả của các lựa chọn trước đó; nó chỉ tổng hợp và định nghĩa chúng.
